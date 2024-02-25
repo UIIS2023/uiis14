@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novi Sad</title>
+    <link rel="stylesheet" href="uiis.css">
+    <script>
+        var timer;
+        function exit() {
+            var buduce = new Date("July 10, 2024 00:00:00");
+            var sada = new Date();
+            var razlika = buduce.getTime() - sada.getTime();
+
+            if (razlika <= 0) {
+                clearInterval(timer); 
+                document.write("Akcija je ovde!!!");
+                return;
+            }
+
+            var sekunde = Math.floor(razlika / 1000);
+            var minuti = Math.floor(sekunde / 60);
+            var sati = Math.floor(minuti / 60);
+            var dani = Math.floor(sati / 24);
+            sati %= 24;
+            minuti %= 60;
+            sekunde %= 60;
+
+            document.getElementById("daysBox").innerHTML = dani;
+            document.getElementById("hoursBox").innerHTML = sati;
+            document.getElementById("minutesBox").innerHTML = minuti;
+            document.getElementById("secondsBox").innerHTML = sekunde;
+        }
+
+        window.onload = function() {
+            exit(); 
+            timer = setInterval(exit, 1000); 
+        };
+    </script>
+    <style>
+        p{
+            font-size: 40px;
+            text-align: center;
+        }
+        #dbs{
+        margin: auto;
+        width: 80%;
+        padding-bottom: 10px;
+        text-align: center;
+        font-size: 20px;
+        background: rgba(4, 188, 239, 0.662);
+        border: solid 4px darkblue;
+    }
+    </style>
+</head>
+<body>
+    <div style="display: flex; align-items: center; padding-left: 450px; ">
+        <p  style="font-size: 50px; text-shadow: 0 6px 12px rgba(0, 0, 0.4, 0.6);"> NOVI SAD</p>
+        <img style="height: 100px; width: 100px;" src="https://th.bing.com/th/id/R.a7a7644a612a8ca07021f23908a1895a?rik=zRpE4UQVAL%2b0LA&riu=http%3a%2f%2fwww.novisad.rs%2fsites%2fdefault%2ffiles%2fimagecache%2f800xXXX%2fimages%2fnovi-sad-grb.png&ehk=6qa%2f4PmWElu%2bFKszFvIJVacZpwoGhBR0LO%2b0vIsC9UQ%3d&risl=&pid=ImgRaw&r=0">
+        </div>
+        <div>
+            <ul class="ul">
+                <li class="li"><a class="lista" href="uiis.html">Početna</a></li>
+                <li class="li"><a class="lista" href="dogadjaji.html">Događaji</a></li>
+                <li class="li"><a class="lista" href="info.html">Info</a></li>
+                    
+            </ul>
+    </div>
+    <p>Sledeci Exit je:</p>
+    <div class="pozadina">
+    <div id="dbs">
+        <h2 style="font-style: italic;">10.7.2024. - 14.7.2024.</h2>
+        <hr>
+        Jos dana:
+        <div id="daysBox">3</div>
+        <hr>
+        Jos sati:
+        <div id="hoursBox">3</div>
+        <hr>
+        Jos minuta:
+        <div id="minutesBox">3</div>
+        <hr>
+        Jos sekundi:
+        <div id="secondsBox">3</div>
+    </div>
+    </div>
+    <hr>
+    <div class="dole">
+        <img src="https://novisad.travel/wp-content/uploads/2022/05/footer-logo.png" >
+        <p>
+            Phone <br><br>
+            <a href="tel:+ 381 (0) 21 66 17 343">+ 381 (0) 21 66 17 343</a>
+            <br>
+            <a href="tel:+ 381 (0) 21 66 17 344">+ 381 (0) 21 66 17 344</a>
+            <br><br>
+            <a href="mailto: Emailtons@novisad.travel">tons@novisad.travel</a>
+            <br><br>
+            Info <br><br>
+            <a href="https://maps.app.goo.gl/oUxy4NByTfANffpc8" target="_blank">Turistički info centar Trg slobode 3</a>
+            <br>
+            Radnim danima od 08h do 19h
+            <br>
+            Subotom od 09h do 17h
+        </p>
+        
+    </div>
+    
+</body>
+</html>
